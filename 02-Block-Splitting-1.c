@@ -154,6 +154,8 @@ subtest("Splitting splittable blocks! (Part 1)",
         test_assert(block->size == 7265);
         test_assert(result->size == 737);
 
+        test_assert(result > block);
+
         test_assert((void *) result - (void *) block == 7264);
     }
 
@@ -188,6 +190,8 @@ subtest("Splitting splittable blocks! (Part 2)",
         test_assert(block->size == 81);
         test_assert(result->size == 81);
 
+        test_assert(result > block);
+
         test_assert((void *) result - (void *) block == 80);
     }
 
@@ -221,6 +225,8 @@ subtest("Splitting splittable blocks! (Part 3)",
 
         test_assert(block->size == 8113);
         test_assert(result->size == 81);
+
+        test_assert(result > block);
 
         test_assert((void *) result - (void *) block == 8112);
     }
