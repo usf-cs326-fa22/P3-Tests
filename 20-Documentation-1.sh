@@ -19,9 +19,9 @@ grep 'TODO' "${TEST_DIR}/../README.md" && test_end 1
 # Doxygen will look for javadoc-style documentation above each function, struct,
 # etc.
 doxygen "${TEST_DIR}/../Doxyfile" 2>&1 \
-    | grep -v '(variable)' \
-    | grep -v '(macro definition)' \
-    | grep 'is not documented' \
+    | grep -v '__attribute__((packed))' \
+    | grep '(function)' \
+    | grep 'is not documented.$' \
         && test_end 1
 
 test_end 0
